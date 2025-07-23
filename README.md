@@ -49,7 +49,7 @@ ORPO-Llama-Finetuner/
 ### 1. Clone the Repository
 
 ```bash
-git clone [https://github.com/your-username/ORPO-Llama-Finetuner.git](https://github.com/your-username/ORPO-Llama-Finetuner.git)
+git clone https://github.com/frezazadeh/ORPO-Llama-Finetuner.git
 cd ORPO-Llama-Finetuner
 ```
 
