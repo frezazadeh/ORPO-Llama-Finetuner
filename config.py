@@ -12,10 +12,12 @@ EPOCHS = 3
 LEARNING_RATE = 6e-5
 LR_WARMUP_STEPS = 100
 CONTEXT_LENGTH = 1024
-ALPHA_ORPO = 0.5  # The lambda parameter for the ORPO loss
+ALPHA_ORPO = 0.5
 PROMPT_MAX_LENGTH = 512
-COMPILE_MODEL = False  # Set to True to use torch.compile() for a significant speedup
+COMPILE_MODEL = False
 DTYPE = torch.bfloat16 if torch.cuda.is_available() and torch.cuda.is_bf16_supported() else torch.float16
+LOG_INTERVAL = 100
+EVAL_INTERVAL = 5
 
 # --- Model Hyperparameters ---
 DROPOUT = 0.0
