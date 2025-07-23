@@ -38,11 +38,34 @@ class ORPOTrainer:
         if config.ENABLE_WANDB_LOGGING:
             try:
                 import wandb
-                wandb.init(project=config.WANDB_PROJECT, name=config.WANDB_RUN_NAME, config=vars(config))
+
+                # Create a clean, serializable dictionary for wandb
+                wandb_config = {
+                    "batch_size": config.BATCH_SIZE,
+                    "epochs": config.EPOCHS,
+                    "learning_rate": config.LEARNING_RATE,
+                    "lr_warmup_steps": config.LR_WARMUP_STEPS,
+                    "context_length": config.CONTEXT_LENGTH,
+                    "alpha_orpo": config.ALPHA_ORPO,
+                    "compile_model": config.COMPILE_MODEL,
+                    "dtype": str(config.DTYPE).split('.')[-1],  # Converts torch.bfloat16 to "bfloat16"
+                    "dropout": config.DROPOUT,
+                    "gradient_clip": config.GRADIENT_CLIP,
+                    "weight_decay": config.WEIGHT_DECAY,
+                    "device": config.DEVICE,
+                    "dataset_hf_id": config.DATASET_HF_ID,
+                }
+
+                wandb.init(
+                    project=config.WANDB_PROJECT, 
+                    name=config.WANDB_RUN_NAME, 
+                    config=wandb_config  # Pass the clean dictionary
+                )
                 self.wandb_logging = True
                 print("INFO: Weights & Biases logging enabled.")
             except ImportError:
                 print("WARNING: 'wandb' library not found. Disabling logging.")
+
 
     def _gdrive_download_if_needed(self):
         model_path = os.path.join(config.CHECKPOINT_DIR, "base.pt")
