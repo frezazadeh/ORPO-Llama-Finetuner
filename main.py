@@ -5,6 +5,13 @@ Main execution script for fine-tuning a Llama model with the ORPO algorithm.
 This script initializes the ORPOTrainer and starts the training process
 using the settings defined in config.py.
 """
+import os
+
+# --- Hugging Face API Token ---
+# Set your Hugging Face token here to interact with the Hub.
+# You can get a token from your Hugging Face account settings.
+os.environ["HF_TOKEN"] = "YOUR_HF_TOKEN_HERE"
+os.environ["HUGGINGFACE_HUB_TOKEN"] = os.environ["HF_TOKEN"]
 
 # --- Performance Enhancements & Debugging Options ---
 import torch
