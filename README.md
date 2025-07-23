@@ -1,6 +1,6 @@
 # ORPO Llama Finetuner
 
-A streamlined and refactored framework for fine-tuning Llama-based models using the **Odds Ratio Preference Optimization (ORPO)** algorithm. This project provides a clean, modular, and easy-to-use codebase to replicate and extend ORPO fine-tuning experiments.
+A streamlined and refactored framework for fine-tuning Llama-like models using the **Monolithic Preference Optimization without Reference Model (ORPO)** algorithm. This project provides a clean, modular, and easy-to-use codebase to replicate and extend ORPO fine-tuning experiments.
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.1%2B-orange.svg)
