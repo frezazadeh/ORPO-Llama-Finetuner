@@ -118,5 +118,6 @@ The script will:
 ---
 
 ## 📜 License
+This llm.py file includes code from the open source LLaMA2.c repository.
 
 This project is licensed under the MIT License.
